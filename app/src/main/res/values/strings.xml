@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">SaveEnvironment</string>
-    <string name="set_goal_text">Enter amount you want to save this month</string>
+    <string name="set_goal_text">Enter below the amount you want to save this month :</string>
     <string name="setGoalButton">Set Goal</string>
     <string name="setGoalAmountHint">Amount</string>
     <string name="transport_button">Transport</string>
     <string name="electricity_button">Electricity</string>
     <string name="button4">Button4</string>
-    <string name="plastic_usage_button">plasticUsage</string>
+    <string name="button3">Button3</string>
 
 </resources>

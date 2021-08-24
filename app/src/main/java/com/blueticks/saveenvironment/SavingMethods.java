@@ -10,16 +10,16 @@ import android.widget.Toast;
 public class SavingMethods extends AppCompatActivity {
     private Button transportButton;
     private Button electricityButton;
+    private Button button3;
     private Button button4;
-    private Button button5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saving_methods);
         transportButton = findViewById(R.id.transportButton);
         electricityButton = findViewById(R.id.electricityButton);
-        button4  = findViewById(R.id.plasticUsageButton);
-        button5  = findViewById(R.id.button5);
+        button3  = findViewById(R.id.plasticUsageButton);
+        button4  = findViewById(R.id.button5);
 
         transportButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,13 +33,13 @@ public class SavingMethods extends AppCompatActivity {
                 Toast.makeText(SavingMethods.this, "Clickable", Toast.LENGTH_SHORT).show();
             }
         });
-        button4.setOnClickListener(new View.OnClickListener() {
+        button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(SavingMethods.this, "Clickable", Toast.LENGTH_SHORT).show();
             }
         });
-        button5.setOnClickListener(new View.OnClickListener() {
+        button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(SavingMethods.this, "Clickable", Toast.LENGTH_SHORT).show();
