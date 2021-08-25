@@ -12,4 +12,12 @@
     <string name="new_bill_string">Enter new Electricity Bill</string>
     <string name="new_electricity_bill">New Electricity Bill</string>
     <string name="save_new_bill">Save New Bill</string>
+    <string name="set_goal_text">Enter below the amount you want to save this month :</string>
+    <string name="setGoalButton">Set Goal</string>
+    <string name="setGoalAmountHint">Amount</string>
+    <string name="transport_button">Transport</string>
+    <string name="electricity_button">Electricity</string>
+    <string name="button4">Button4</string>
+    <string name="button3">Button3</string>
+    <string name="title_activity_login">LoginActivity</string>
 </resources>
