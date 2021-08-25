@@ -7,5 +7,5 @@
     <string name="electricity_button">Electricity</string>
     <string name="button4">Button4</string>
     <string name="button3">Button3</string>
-
+    <string name="title_activity_login">LoginActivity</string>
 </resources>

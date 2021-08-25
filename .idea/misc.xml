@@ -7,6 +7,13 @@
         <entry key="..\:/SaveEnvironmentApp/app/src/main/res/layout/activity_set_goal.xml" value="0.22" />
         <entry key="..\:/SaveEnvironmentApp/app/src/main/res/layout/saving_methods.xml" value="0.1796875" />
         <entry key="..\:/SaveEnvironmentApp/app/src/main/res/layout/set_goal.xml" value="0.22" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/drawable/register_link.xml" value="0.2703125" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.219140625" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout-w936dp/activity_login.xml" value="0.190625" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_register.xml" value="0.2921875" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
@@ -15,5 +22,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.25416666666666665" />
+      </ProjectState>
+    </option>
   </component>
 </project>
