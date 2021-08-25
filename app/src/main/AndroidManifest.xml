@@ -10,6 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SaveEnvironment">
         <activity
+            android:name=".HomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ElectricityActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SavingMethods"
+            android:exported="true" />
+        <activity
+            android:name=".SetGoal"
+            android:name=".SignInActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Register"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
