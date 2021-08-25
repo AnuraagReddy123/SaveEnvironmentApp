@@ -1,5 +1,17 @@
 <resources>
     <string name="app_name">SaveEnvironment</string>
+    <string name="placeholder_percentage">You have completed <b>45%</b> of your goal!</string>
+    <string name="transportation_string">Transportation</string>
+    <string name="electricity_string">Electricity</string>
+    <string name="introduction_text">Find different ways to save money and save climate!</string>
+    <string name="additional_values">Additional Ways</string>
+    <string name="previous_bill_string">Previous Electricity Bill</string>
+    <string name="placeholder_money">Rs 30000</string>
+    <string name="notification_string">We will help you with managing your current electricity bill. Turn on notifications from settings &lt;br /&gt;
+        &lt;br /&gt;The difference will be added to your savings!</string>
+    <string name="new_bill_string">Enter new Electricity Bill</string>
+    <string name="new_electricity_bill">New Electricity Bill</string>
+    <string name="save_new_bill">Save New Bill</string>
     <string name="set_goal_text">Enter below the amount you want to save this month :</string>
     <string name="setGoalButton">Set Goal</string>
     <string name="setGoalAmountHint">Amount</string>
