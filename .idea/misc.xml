@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SaveEnvironmentApp/app/src/main/res/layout/activity_saving_methods.xml" value="0.1796875" />
+        <entry key="..\:/SaveEnvironmentApp/app/src/main/res/layout/activity_set_goal.xml" value="0.22" />
+        <entry key="..\:/SaveEnvironmentApp/app/src/main/res/layout/saving_methods.xml" value="0.1796875" />
+        <entry key="..\:/SaveEnvironmentApp/app/src/main/res/layout/set_goal.xml" value="0.22" />
         <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/drawable/register_link.xml" value="0.2703125" />
         <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.219140625" />
         <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout-w936dp/activity_login.xml" value="0.190625" />
