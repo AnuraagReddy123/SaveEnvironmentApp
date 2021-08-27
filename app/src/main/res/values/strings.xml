@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">SaveEnvironment</string>
+    <string name="amount_saved_by_walking">Amount saved by walking</string>
+    <string name="distance">Distance</string>
+    <string name="insert_text">Insert Text</string>
+    <string name="save">SAVE</string>
+    <string name="source">Source</string>
+    <string name="destination">Destination</string>
     <string name="placeholder_percentage">You have completed <b>45%</b> of your goal!</string>
     <string name="transportation_string">Transportation</string>
     <string name="electricity_string">Electricity</string>
