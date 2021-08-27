@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/harsh/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/drawable/textview_border.xml" value="0.18385416666666668" />
-        <entry key="..\:/Users/harsh/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/drawable/custom_progress_bg.xml" value="0.32083333333333336" />
+        <entry key="app/src/main/res/layout/activity_electricity.xml" value="0.27943840579710144" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
       </map>
     </option>
   </component>
@@ -13,5 +15,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.27943840579710144" />
+      </ProjectState>
+    </option>
   </component>
 </project>
