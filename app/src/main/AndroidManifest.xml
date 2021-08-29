@@ -39,9 +39,6 @@
             android:name=".SavingMethods"
             android:exported="true" />
         <activity
-            android:name=".SetGoal"
-            android:exported="true" />
-        <activity
             android:name=".SignInActivity"
             android:exported="true">
             <intent-filter>
