@@ -16,7 +16,7 @@ import model.Idea;
 
 public class ideaShareActivity extends AppCompatActivity {
 
-
+    private ArrayList<Idea> ideaArrayList;
     private RecyclerViewAdapter recyclerViewAdapter;
     private RecyclerView recyclerView;
 
@@ -24,7 +24,7 @@ public class ideaShareActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_idea_share);
-        ArrayList<Idea> ideaArrayList = new ArrayList<>();
+        ideaArrayList = new ArrayList<>();
         Idea idea = new Idea("Kishor", "Gaddam", "No Idea as of now.....");
         ideaArrayList.add(idea);
 
