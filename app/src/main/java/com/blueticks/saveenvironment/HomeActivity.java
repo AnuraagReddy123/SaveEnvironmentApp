@@ -16,6 +16,7 @@ public class HomeActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private Button transportationBtn;
     private Button electricityBtn;
+    private Button setGoalBtn;
     private Button additionalInfo;
 
     @Override
@@ -26,6 +27,7 @@ public class HomeActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         transportationBtn = findViewById(R.id.transportation_btn);
         electricityBtn = findViewById(R.id.electricity_btn);
+        setGoalBtn = findViewById(R.id.setgoal_btn);
         // if no user is currently logged in
         if(FirebaseAuth.getInstance().getCurrentUser() == null) {
             Intent intent = new Intent(HomeActivity.this,SignInActivity.class);
@@ -44,5 +46,12 @@ public class HomeActivity extends AppCompatActivity {
 
         electricityBtn.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this,
                 ElectricityActivity.class)));
+
+        setGoalBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, SetGoalOfElectricity.class));
+            }
+        });
     }
 }
