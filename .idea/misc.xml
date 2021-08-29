@@ -3,10 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable/custom_progress_bg.xml" value="0.32083333333333336" />
-        <entry key="app/src/main/res/layout/activity_electricity.xml" value="0.27943840579710144" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.264" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/drawable/cards.xml" value="0.2703125" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/drawable/register_link.xml" value="0.2703125" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.219140625" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout-w936dp/activity_login.xml" value="0.190625" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_idea_share.xml" value="0.264" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_register.xml" value="0.2921875" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_text_of_idea.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/card.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
@@ -19,7 +26,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.27943840579710144" />
+        <option name="scale" value="0.25416666666666665" />
       </ProjectState>
     </option>
   </component>
