@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "966590551451",
+    "project_id": "saveenvironment-6db43",
+    "storage_bucket": "saveenvironment-6db43.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966590551451:android:43e0604d625ff35deb7d3e",
+        "android_client_info": {
+          "package_name": "com.blueticks.saveenvironment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966590551451-p93q6f349psj1vtv6kr0ouv9r02c1m7p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7EqpIHxxQBxtbr4Wf2vvfsNNvRD6QIsc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "966590551451-p93q6f349psj1vtv6kr0ouv9r02c1m7p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

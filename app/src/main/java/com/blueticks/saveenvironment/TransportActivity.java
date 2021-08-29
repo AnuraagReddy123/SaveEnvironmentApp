@@ -13,27 +13,27 @@ import android.widget.TextView;
 import android.view.View;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class TransportActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-     private Button button;
-     private TextView textview7;
-     private TextView textview9;
-     private TextView textview11;
+    private Button button;
+    private TextView textview7;
+    private TextView textview9;
+    private TextView textview11;
 
     private TextView textview5;
     private TextView textview8;
     private TextView textview10;
 
 
-     private EditText edittext1;
-     private EditText edittext2;
+    private EditText edittext1;
+    private EditText edittext2;
 
     private Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_transport);
 
         button=findViewById(R.id.button2);
         textview7=findViewById(R.id.textView7);
