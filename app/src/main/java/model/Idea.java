@@ -5,6 +5,9 @@ public class Idea {
     private String lastName;
     private String text;
 
+    public Idea() {
+    }
+
     public Idea(String firstName, String lastName, String text) {
         this.firstName = firstName;
         this.lastName = lastName;
