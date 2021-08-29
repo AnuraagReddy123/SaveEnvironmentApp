@@ -12,11 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SaveEnvironment">
         <activity
-            android:name=".VerifyPhoneNumber"
+            android:name=".HomeActivity"
             android:exported="true" />
         <activity
-            android:name=".HomeActivity"
-            android:exported="true"></activity>
+            android:name=".VerifyPhoneNumber"
+            android:exported="true" />
         <activity
             android:name=".ElectricityActivity"
             android:exported="true" />
@@ -37,6 +37,9 @@
         </activity>
         <activity
             android:name=".Register"
+            android:exported="true" />
+        <activity
+            android:name=".TransportActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
