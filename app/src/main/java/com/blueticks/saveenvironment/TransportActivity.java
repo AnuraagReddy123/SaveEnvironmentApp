@@ -2,20 +2,15 @@ package com.blueticks.saveenvironment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.view.View;
 
-import java.util.Vector;
+public class TransportActivity extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity {
-
-    Vector<View> ideas;
     private Button button;
     private TextView textview4;
     private TextView textview5;
