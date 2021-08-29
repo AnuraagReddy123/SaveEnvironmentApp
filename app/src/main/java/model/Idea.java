@@ -1,4 +1,4 @@
-package com.blueticks.saveenvironment;
+package model;
 
 public class Idea {
     private String firstName;
