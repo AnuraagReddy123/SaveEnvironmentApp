@@ -12,6 +12,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
+import model.Idea;
+
 public class ideaShareActivity extends AppCompatActivity {
 
     private ArrayList<Idea> ideaArrayList;
