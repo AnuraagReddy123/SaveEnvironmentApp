@@ -17,7 +17,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button transportationBtn;
     private Button electricityBtn;
     private Button setGoalBtn;
-    private Button additionalInfo;
+    private Button additionalInfoBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,30 +28,22 @@ public class HomeActivity extends AppCompatActivity {
         transportationBtn = findViewById(R.id.transportation_btn);
         electricityBtn = findViewById(R.id.electricity_btn);
         setGoalBtn = findViewById(R.id.setgoal_btn);
+        additionalInfoBtn = findViewById(R.id.additional_btn);
+
         // if no user is currently logged in
-        if(FirebaseAuth.getInstance().getCurrentUser() == null) {
-            Intent intent = new Intent(HomeActivity.this,SignInActivity.class);
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            Intent intent = new Intent(HomeActivity.this, SignInActivity.class);
             startActivity(intent);
             finish();
+        } else {
+            Toast.makeText(HomeActivity.this, "Welcome!!", Toast.LENGTH_SHORT).show();
         }
-        else {
-            Toast.makeText(HomeActivity.this, "Welcome!!" , Toast.LENGTH_SHORT).show();
-        }
-        transportationBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, TransportActivity.class));
-            }
-        });
+        transportationBtn.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, TransportActivity.class)));
 
-        electricityBtn.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this,
-                ElectricityActivity.class)));
+        electricityBtn.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, ElectricityActivity.class)));
 
-        setGoalBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, SetGoalOfElectricity.class));
-            }
-        });
+        setGoalBtn.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, SetGoalOfElectricity.class)));
+
+        additionalInfoBtn.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, ideaShareActivity.class)));
     }
 }
