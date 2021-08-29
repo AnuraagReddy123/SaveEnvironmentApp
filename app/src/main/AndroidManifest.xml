@@ -12,17 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SaveEnvironment">
         <activity
+            android:name=".SettingsActivity"
+            android:exported="true" />
+        <activity
             android:name=".textOfIdea"
             android:exported="true" />
         <activity
             android:name=".ideaShareActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".HomeActivity"
             android:exported="true" />
@@ -41,7 +38,11 @@
         <activity
             android:name=".SignInActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <meta-data

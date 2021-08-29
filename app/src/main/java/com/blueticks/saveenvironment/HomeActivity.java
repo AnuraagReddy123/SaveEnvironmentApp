@@ -38,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
         transportationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(HomeActivity.this, TransportActivity.class));
             }
         });
 
