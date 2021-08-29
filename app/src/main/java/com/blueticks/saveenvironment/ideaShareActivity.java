@@ -22,7 +22,7 @@ public class ideaShareActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_idea_share);
-
+        ideaArrayList = new ArrayList<>();
         Idea idea = new Idea("Kishor", "Gaddam", "No Idea as of now.....");
         ideaArrayList.add(idea);
 
@@ -39,6 +39,16 @@ public class ideaShareActivity extends AppCompatActivity {
             }
         });
 
+        recyclerViewAdapter = new RecyclerViewAdapter(ideaShareActivity.this, ideaArrayList);
+        recyclerView.setAdapter(recyclerViewAdapter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Intent intent = getIntent();
+        String idea = intent.getStringExtra("addedIdea");
+        ideaArrayList.add(new Idea("Abcde", "Fghijk", idea));
         recyclerViewAdapter = new RecyclerViewAdapter(ideaShareActivity.this, ideaArrayList);
         recyclerView.setAdapter(recyclerViewAdapter);
     }
