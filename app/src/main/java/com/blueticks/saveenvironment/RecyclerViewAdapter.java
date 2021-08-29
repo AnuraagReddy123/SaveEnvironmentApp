@@ -1,6 +1,7 @@
 package com.blueticks.saveenvironment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,7 +55,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         @Override
         public void onClick(View view) {
-
+//            Intent intent = new Intent(context, WholeIdeaPage.class);
+//            intent.putExtra("name", name.getText().toString());
+//            intent.putExtra("wholeIdea", ideaText.getText().toString());
+//            context.startActivity(intent);
         }
     }
 }
