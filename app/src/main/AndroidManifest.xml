@@ -12,11 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SaveEnvironment">
         <activity
-            android:name=".VerifyPhoneNumber"
+            android:name=".textOfIdea"
+            android:exported="true" />
+        <activity
+            android:name=".ideaShareActivity"
             android:exported="true" />
         <activity
             android:name=".HomeActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
+        <activity
+            android:name=".VerifyPhoneNumber"
+            android:exported="true" />
         <activity
             android:name=".ElectricityActivity"
             android:exported="true" />
@@ -35,6 +41,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
         <activity
             android:name=".Register"
             android:exported="true" />

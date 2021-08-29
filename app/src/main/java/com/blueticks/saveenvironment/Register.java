@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import java.*;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -51,8 +52,8 @@ public class Register extends AppCompatActivity {
                     lastName.setError(null);
                 }
 
-                if(phnNumber.getText().toString().trim().length() == 0){
-                    phnNumber.setError("Please enter your phone number");
+                if(android.text.TextUtils.isDigitsOnly(phnNumber.getText().toString().trim()) == false || phnNumber.getText().toString().trim().length() != 10){
+                    phnNumber.setError("Please enter correct phone number");
                 }else{
                     phnNumber.setError(null);
                 }
