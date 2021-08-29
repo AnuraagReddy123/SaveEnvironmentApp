@@ -11,7 +11,13 @@
         android:theme="@style/Theme.SaveEnvironment">
         <activity
             android:name=".HomeActivity"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ElectricityActivity"
             android:exported="true" />
@@ -28,14 +34,8 @@
             android:name=".Register"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".TransportActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
