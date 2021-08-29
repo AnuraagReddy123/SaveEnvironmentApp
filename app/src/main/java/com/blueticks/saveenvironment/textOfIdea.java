@@ -27,7 +27,10 @@ public class textOfIdea extends AppCompatActivity {
         postBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(textOfIdea.this, ideaShareActivity.class));
+                // add text written by user to the database
+                Intent intent = new Intent(textOfIdea.this, ideaShareActivity.class);
+                intent.putExtra("addedIdea", ideaContent.getText().toString());
+                startActivity(intent);
             }
         });
 
