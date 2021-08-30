@@ -2,6 +2,7 @@ package com.blueticks.saveenvironment;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -35,6 +37,8 @@ public class textOfIdea extends AppCompatActivity {
     private EditText ideaContent;
     private Button postBtn;
     private LinearLayout cardsList;
+    private ProgressBar progressBar;
+    private ConstraintLayout layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +47,8 @@ public class textOfIdea extends AppCompatActivity {
 
         ideaContent = findViewById(R.id.ideaContent);
         postBtn = findViewById(R.id.postButton);
+        progressBar = findViewById(R.id.idea_progress_bar);
+        layout = findViewById(R.id.ideaView);
 
         postBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +64,8 @@ public class textOfIdea extends AppCompatActivity {
         String firstName = UserApi.getInstance().getFirstName();
         String lastName = UserApi.getInstance().getLastName();
         String ideaFromUser = ideaContent.getText().toString().trim();
+        progressBar.setVisibility(View.VISIBLE);
+        layout.setVisibility(View.GONE);
 
         if (!TextUtils.isEmpty(ideaFromUser)) {
             Idea idea = new Idea(firstName, lastName, ideaFromUser);
@@ -73,9 +81,14 @@ public class textOfIdea extends AppCompatActivity {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             Log.d("Check", "onFailure: " + e.getMessage());
+                            Toast.makeText(textOfIdea.this, "There was an error", Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.GONE);
+                            layout.setVisibility(View.VISIBLE);
                         }
                     });
         } else {
+            progressBar.setVisibility(View.GONE);
+            layout.setVisibility(View.VISIBLE);
             Toast.makeText(textOfIdea.this, "Please enter idea", Toast.LENGTH_SHORT).show();
         }
     }

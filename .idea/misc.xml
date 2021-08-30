@@ -13,8 +13,9 @@
         <entry key="app/src/main/res/layout/activity_set_goal.xml" value="0.28396739130434784" />
         <entry key="app/src/main/res/layout/activity_set_goal_of_electricity.xml" value="0.28396739130434784" />
         <entry key="app/src/main/res/layout/activity_text_of_idea.xml" value="0.296195652173913" />
-        <entry key="app/src/main/res/layout/activity_transport.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_transport.xml" value="0.27943840579710144" />
         <entry key="app/src/main/res/layout/activity_verify_phone_number.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_whole_idea_page.xml" value="0.2916666666666667" />
       </map>
     </option>
   </component>
