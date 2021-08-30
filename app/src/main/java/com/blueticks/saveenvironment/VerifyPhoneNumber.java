@@ -51,11 +51,11 @@ public class VerifyPhoneNumber extends AppCompatActivity {
             verifyCode(code);
         });
         phoneNumberEnteredByTheUser = findViewById(R.id.verification_code_entered_by_user);
-        firstName = getIntent().getStringExtra("firstName");
-        lastName = getIntent().getStringExtra("lastName");
-        phoneNumber = getIntent().getStringExtra("phoneNumber");
+        firstName = UserApi.getInstance().getFirstName();
+        lastName = UserApi.getInstance().getLastName();
+        phoneNumber = UserApi.getInstance().getPhoneNumber();
         String phoneNumberWithCountry = "+91" + phoneNumber;
-        oldUser = getIntent().getBooleanExtra("isSignIn",false);
+        oldUser = getIntent().getBooleanExtra(UserApi.LOG_IN,false);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         // send the OTP as soon as this activity is started
@@ -119,14 +119,10 @@ public class VerifyPhoneNumber extends AppCompatActivity {
                 .addOnCompleteListener(VerifyPhoneNumber.this,
                         task -> {
                             if(task.isSuccessful()) {
-                                UserApi userApi = UserApi.getInstance();
-                                userApi.setPhoneNumber(phoneNumber);
-                                userApi.setFirstName(firstName);
-                                userApi.setLastName(lastName);
-                                UserApi.getInstance().setUid(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                                UserApi.getInstance().setUserid(FirebaseAuth.getInstance().getCurrentUser().getUid());
                                 if(!oldUser) {
                                     // add this new user to that database
-                                    addDataToFireStore(firstName,lastName,phoneNumber);
+                                    addUserToFireStore(firstName,lastName,phoneNumber);
                                 }
                                 else{
                                     Intent intent = new Intent(VerifyPhoneNumber.this,
@@ -143,10 +139,10 @@ public class VerifyPhoneNumber extends AppCompatActivity {
     }
 
     // Add the new user to the database
-    private void addDataToFireStore(String firstName,String lastName,String phoneNumber) {
+    private void addUserToFireStore(String firstName,String lastName,String phoneNumber) {
         // creating a collection reference
         // for our Firebase Firestore database
-        CollectionReference dbUsers = db.collection("Users");
+        CollectionReference dbUsers = db.collection(UserApi.COLLECTIONS_NAME);
         // Create the user object with the user data
         User user = new User(firstName,lastName, phoneNumber);
         // add the data to the database
