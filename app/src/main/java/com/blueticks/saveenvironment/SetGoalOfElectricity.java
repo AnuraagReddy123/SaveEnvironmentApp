@@ -2,11 +2,14 @@ package com.blueticks.saveenvironment;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -28,6 +31,8 @@ public class SetGoalOfElectricity extends AppCompatActivity {
     private EditText electricityBill;
     private Button button;
     private FirebaseFirestore db;
+    private ProgressBar progressBar;
+    private ConstraintLayout constraintLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,9 @@ public class SetGoalOfElectricity extends AppCompatActivity {
         goalAmount = findViewById(R.id.goalAmount);
         electricityBill = findViewById(R.id.electricityBill);
         button = findViewById(R.id.buttonSetGoalOfElectricity);
+        progressBar = findViewById(R.id.goal_progress_bar);
+        constraintLayout = findViewById(R.id.goalLayout);
+
         db = FirebaseFirestore.getInstance();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +59,8 @@ public class SetGoalOfElectricity extends AppCompatActivity {
     }
 
     private void updateUser(double electricityBill,double targetMoney) {
+        progressBar.setVisibility(View.VISIBLE);
+        constraintLayout.setVisibility(View.GONE);
         UserApi.getInstance().setElectricityBill(electricityBill);
         UserApi.getInstance().setTargetMoney(targetMoney);
         db.collection(UserApi.COLLECTIONS_NAME).document(UserApi.getInstance().getUserId())
@@ -59,12 +69,18 @@ public class SetGoalOfElectricity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void unused) {
                         Log.d(LOG_TAG,"Update Successful");
+                        progressBar.setVisibility(View.GONE);
+                        constraintLayout.setVisibility(View.VISIBLE);
+                        Toast.makeText(SetGoalOfElectricity.this, "You set your goal", Toast.LENGTH_SHORT).show();
+                        finish();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.d(LOG_TAG,"Update Failed");
+                        progressBar.setVisibility(View.GONE);
+                        constraintLayout.setVisibility(View.VISIBLE);
                     }
                 });
     }
