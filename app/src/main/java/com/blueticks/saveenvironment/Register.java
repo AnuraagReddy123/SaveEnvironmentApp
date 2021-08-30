@@ -66,8 +66,8 @@ public class Register extends AppCompatActivity {
                 String phoneNumber = phnNumber.getText().toString();
                 String first_name = firstName.getText().toString();
                 String last_name = lastName.getText().toString();
-                db.collection("Users")
-                        .whereEqualTo("phoneNumber",phoneNumber)
+                db.collection(UserApi.COLLECTIONS_NAME)
+                        .whereEqualTo(UserApi.PHONE_NUMBER,phoneNumber)
                         .get()
                         .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                             @Override
@@ -77,10 +77,10 @@ public class Register extends AppCompatActivity {
                                     if(task.getResult().size() == 0) {
                                         // Call the VerifyNumberClass and pass phone number to it
                                         Intent intent = new Intent(Register.this, VerifyPhoneNumber.class);
-                                        intent.putExtra("phoneNumber", phoneNumber);
-                                        intent.putExtra("firstName",first_name);
-                                        intent.putExtra("lastName",last_name);
-                                        intent.putExtra("isSignIn",false);// is the user being signed in
+                                        UserApi.getInstance().setFirstName(first_name);
+                                        UserApi.getInstance().setLastName(last_name);
+                                        UserApi.getInstance().setPhoneNumber(phoneNumber);
+                                        intent.putExtra(UserApi.LOG_IN,false);// is the user being signed in
                                         startActivity(intent);
                                     }
                                     else {

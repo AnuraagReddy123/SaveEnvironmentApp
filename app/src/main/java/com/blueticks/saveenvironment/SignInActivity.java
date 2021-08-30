@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -18,6 +19,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import model.User;
+import util.UserApi;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -33,6 +37,7 @@ public class SignInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         // initialising objects
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -65,8 +70,8 @@ public class SignInActivity extends AppCompatActivity {
                         // method for sending verification code
                     }
                     String phoneNumber = phnNumber.getText().toString();
-                    db.collection("Users")
-                            .whereEqualTo("phoneNumber",phoneNumber)
+                    db.collection(UserApi.COLLECTIONS_NAME)
+                            .whereEqualTo(UserApi.PHONE_NUMBER,phoneNumber)
                             .get()
                             .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                 @Override
@@ -77,9 +82,14 @@ public class SignInActivity extends AppCompatActivity {
                                             Toast.makeText(SignInActivity.this, "Phone Number doesn't exist", Toast.LENGTH_SHORT).show();
                                         }
                                         else {
+                                            QuerySnapshot querySnapshot = task.getResult();
+                                            User user = querySnapshot.getDocuments().get(0).toObject(User.class);
+                                            UserApi userApi = UserApi.getInstance();
+                                            userApi.setFirstName(user.getFirstName());
+                                            userApi.setLastName(user.getLastName());
+                                            userApi.setPhoneNumber(user.getPhoneNumber());
                                             Intent intent = new Intent(SignInActivity.this, VerifyPhoneNumber.class);
-                                            intent.putExtra("phoneNumber", phoneNumber);
-                                            intent.putExtra("isSignIn",true);// is the user being signed in
+                                            intent.putExtra(UserApi.LOG_IN,true);// checks if the user being signed in ?
                                             startActivity(intent);
                                         }
                                     }

@@ -1,13 +1,19 @@
 package util;
 
-import com.google.firebase.firestore.DocumentReference;
-
 public class UserApi {
     private String firstName;
     private String lastName;
     private String uId;
     private String phoneNumber;
     private static UserApi instance;
+    public static final String COLLECTIONS_NAME = "Users";
+    public static final String FIRST_NAME = "firstName";
+    public static final String LAST_NAME = "lastName";
+    public static final String PHONE_NUMBER = "phoneNumber";
+    public static final String TARGET_MONEY = "targetMoney";
+    public static final String CURRENT_MONEY = "currentMoney";
+    public static final String ELECTRICITY_BILL = "electricityBill";
+    public static final String LOG_IN = "isSignIn";
 
     public static UserApi getInstance() {
         if (instance == null)
@@ -42,7 +48,7 @@ public class UserApi {
         return uId;
     }
 
-    public void setUid(String uId) {
+    public void setUserid(String uId) {
         this.uId = uId;
     }
 

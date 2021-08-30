@@ -41,29 +41,29 @@ public class SetGoalOfElectricity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(LOG_TAG,"Fetched the user data");
+                Log.v(LOG_TAG,"Fetched the user data");
                 String phoneNumber = UserApi.getInstance().getPhoneNumber();
                 double electricBill = Double.parseDouble(electricityBill.getText().toString());
                 double targetMoney = Double.parseDouble(goalAmount.getText().toString());
-                updateUser(phoneNumber,electricBill,targetMoney);
+                updateUser(electricBill,targetMoney);
             }
         });
 
     }
 
-    private void updateUser(String phoneNumber,double electricityBill,double targetMoney) {
-        db.collection("Users").document(UserApi.getInstance().getUserId())
-                .update("targetMoney",targetMoney,"electricityBill",electricityBill)
+    private void updateUser(double electricityBill,double targetMoney) {
+        db.collection(UserApi.COLLECTIONS_NAME).document(UserApi.getInstance().getUserId())
+                .update(UserApi.TARGET_MONEY,targetMoney,UserApi.ELECTRICITY_BILL,electricityBill)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-
+                        Log.d(LOG_TAG,"Update Successful");
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-
+                        Log.d(LOG_TAG,"Update Failed");
                     }
                 });
     }
