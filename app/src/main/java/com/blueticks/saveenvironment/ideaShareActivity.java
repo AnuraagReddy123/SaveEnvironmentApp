@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.ScrollView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -35,6 +38,8 @@ public class ideaShareActivity extends AppCompatActivity {
     private ArrayList<Idea> ideaArrayList;
     private RecyclerViewAdapter recyclerViewAdapter;
     private RecyclerView recyclerView;
+    private ProgressBar progressBar;
+    private ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +50,9 @@ public class ideaShareActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
+
+        progressBar = findViewById(R.id.idea_share_progress);
+        scrollView = findViewById(R.id.mainView);
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -66,6 +74,8 @@ public class ideaShareActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        progressBar.setVisibility(View.VISIBLE);
+        scrollView.setVisibility(View.GONE);
         collectionReference
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -83,6 +93,8 @@ public class ideaShareActivity extends AppCompatActivity {
                                     ideaArrayList);
                             recyclerView.setAdapter(recyclerViewAdapter);
                             recyclerViewAdapter.notifyDataSetChanged();
+                            progressBar.setVisibility(View.GONE);
+                            scrollView.setVisibility(View.VISIBLE);
                         } else {
 
                         }
@@ -91,7 +103,7 @@ public class ideaShareActivity extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-
+                        Log.d("Checking", "onFailure: " + e.getMessage());
                     }
                 });
     }
