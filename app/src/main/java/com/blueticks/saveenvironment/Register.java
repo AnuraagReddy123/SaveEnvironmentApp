@@ -20,6 +20,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.Objects;
 
+import model.User;
+import util.UserApi;
+
 public class Register extends AppCompatActivity {
 
     private static final String LOG_TAG = Register.class.getSimpleName();

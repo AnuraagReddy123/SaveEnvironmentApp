@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import util.UserApi;
 
 public class HomeActivity extends AppCompatActivity {
     private ProgressBar progressBar;
@@ -23,7 +26,6 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
         progressBar = findViewById(R.id.progressBar);
         transportationBtn = findViewById(R.id.transportation_btn);
         electricityBtn = findViewById(R.id.electricity_btn);
