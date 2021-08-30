@@ -77,10 +77,9 @@ public class Register extends AppCompatActivity {
                                     if(task.getResult().size() == 0) {
                                         // Call the VerifyNumberClass and pass phone number to it
                                         Intent intent = new Intent(Register.this, VerifyPhoneNumber.class);
-//                                        UserApi.getInstance().setFirstName(first_name);
-//                                        UserApi.getInstance().setLastName(last_name);
-//                                        UserApi.getInstance().setPhoneNumber(phoneNumber);
-                                        UserApi.getInstance().setCurrentUser(new User(first_name,last_name,phoneNumber));
+                                        UserApi.getInstance().setFirstName(first_name);
+                                        UserApi.getInstance().setLastName(last_name);
+                                        UserApi.getInstance().setPhoneNumber(phoneNumber);
                                         intent.putExtra(UserApi.LOG_IN,false);// is the user being signed in
                                         startActivity(intent);
                                     }

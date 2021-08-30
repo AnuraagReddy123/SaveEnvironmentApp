@@ -61,15 +61,12 @@ public class HomeActivity extends AppCompatActivity {
                         DocumentSnapshot documentSnapshot = task.getResult();
                         User user = documentSnapshot.toObject(User.class);
                         UserApi userApi = UserApi.getInstance();
-                        userApi.setCurrentUser(user);
-//                        userApi.setFirstName(user.getFirstName());
-//                        userApi.setLastName(user.getLastName());
-//
-//                        userApi.setPhoneNumber(user.getPhoneNumber());
-                        double currentMoney = UserApi.getInstance().getCurrentUser().getCurrentMoney();
-                        double targetMoney = UserApi.getInstance().getCurrentUser().getTargetMoney();
-//                        progressBar.setProgress((int)(currentMoney/targetMoney));
-                        progressBar.setProgress(45);
+                        userApi.setFirstName(user.getFirstName());
+                        userApi.setLastName(user.getLastName());
+                        userApi.setPhoneNumber(user.getPhoneNumber());
+                        double currentMoney = UserApi.getInstance().getCurrentMoney();
+                        double targetMoney = UserApi.getInstance().getTargetMoney();
+                        progressBar.setProgress((int)(currentMoney/targetMoney));
                     }
                     else{
                         Log.d(LOG_TAG,"Failed to fetch data");

@@ -61,10 +61,8 @@ public class textOfIdea extends AppCompatActivity {
     }
 
     private void saveIdea() {
-//        String firstName = UserApi.getInstance().getFirstName();
-//        String lastName = UserApi.getInstance().getLastName();
-        String firstName = UserApi.getInstance().getCurrentUser().getFirstName();
-        String lastName = UserApi.getInstance().getCurrentUser().getLastName();
+        String firstName = UserApi.getInstance().getFirstName();
+        String lastName = UserApi.getInstance().getLastName();
         String ideaFromUser = ideaContent.getText().toString().trim();
         progressBar.setVisibility(View.VISIBLE);
         layout.setVisibility(View.GONE);

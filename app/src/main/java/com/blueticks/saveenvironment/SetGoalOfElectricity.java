@@ -51,8 +51,8 @@ public class SetGoalOfElectricity extends AppCompatActivity {
     }
 
     private void updateUser(double electricityBill,double targetMoney) {
-        UserApi.getInstance().getCurrentUser().setElectricityBill(electricityBill);
-        UserApi.getInstance().getCurrentUser().setTargetMoney(targetMoney);
+        UserApi.getInstance().setElectricityBill(electricityBill);
+        UserApi.getInstance().setTargetMoney(targetMoney);
         db.collection(UserApi.COLLECTIONS_NAME).document(UserApi.getInstance().getUserId())
                 .update(UserApi.TARGET_MONEY,targetMoney,UserApi.ELECTRICITY_BILL,electricityBill)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {

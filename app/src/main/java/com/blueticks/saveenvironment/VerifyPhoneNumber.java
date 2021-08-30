@@ -51,12 +51,9 @@ public class VerifyPhoneNumber extends AppCompatActivity {
             verifyCode(code);
         });
         phoneNumberEnteredByTheUser = findViewById(R.id.verification_code_entered_by_user);
-//        firstName = UserApi.getInstance().getFirstName();
-//        lastName = UserApi.getInstance().getLastName();
-//        phoneNumber = UserApi.getInstance().getPhoneNumber();
-        firstName = UserApi.getInstance().getCurrentUser().getFirstName();
-        lastName = UserApi.getInstance().getCurrentUser().getLastName();
-        phoneNumber = UserApi.getInstance().getCurrentUser().getPhoneNumber();
+        firstName = UserApi.getInstance().getFirstName();
+        lastName = UserApi.getInstance().getLastName();
+        phoneNumber = UserApi.getInstance().getPhoneNumber();
         String phoneNumberWithCountry = "+91" + phoneNumber;
         oldUser = getIntent().getBooleanExtra(UserApi.LOG_IN,false);
         mAuth = FirebaseAuth.getInstance();
