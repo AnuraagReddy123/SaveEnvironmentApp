@@ -64,6 +64,9 @@ public class HomeActivity extends AppCompatActivity {
                         userApi.setFirstName(user.getFirstName());
                         userApi.setLastName(user.getLastName());
                         userApi.setPhoneNumber(user.getPhoneNumber());
+                        double currentMoney = UserApi.getInstance().getCurrentMoney();
+                        double targetMoney = UserApi.getInstance().getTargetMoney();
+                        progressBar.setProgress((int)(currentMoney/targetMoney));
                     }
                     else{
                         Log.d(LOG_TAG,"Failed to fetch data");

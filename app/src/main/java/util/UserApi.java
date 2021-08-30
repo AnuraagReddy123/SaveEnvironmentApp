@@ -1,10 +1,15 @@
 package util;
 
+import model.User;
+
 public class UserApi {
     private String firstName;
     private String lastName;
-    private String uId;
+      private String uId;
     private String phoneNumber;
+    private double currentMoney;
+    private double targetMoney;
+    private double electricityBill;
     private static UserApi instance;
     public static final String COLLECTIONS_NAME = "Users";
     public static final String FIRST_NAME = "firstName";
@@ -47,7 +52,6 @@ public class UserApi {
     public String getUserId() {
         return uId;
     }
-
     public void setUserid(String uId) {
         this.uId = uId;
     }
@@ -58,5 +62,29 @@ public class UserApi {
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public void setTargetMoney(double targetMoney) {
+        this.targetMoney = targetMoney;
+    }
+
+    public double getTargetMoney() {
+        return targetMoney;
+    }
+
+    public void setCurrentMoney(double currentMoney) {
+        this.currentMoney = currentMoney;
+    }
+
+    public double getCurrentMoney() {
+        return currentMoney;
+    }
+
+    public void setElectricityBill(double electricityBill) {
+        this.electricityBill = electricityBill;
+    }
+
+    public double getElectricityBill() {
+        return electricityBill;
     }
 }
