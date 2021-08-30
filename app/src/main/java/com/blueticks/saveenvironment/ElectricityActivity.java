@@ -40,6 +40,7 @@ public class ElectricityActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Double newBill = Double.parseDouble(newBillEt.getText().toString());
                 UserApi.getInstance().setElectricityBill(newBill);
+                Log.d(LOG_TAG,"Money: " + (currentMoney + previousBill - newBill));
                 UserApi.getInstance().setCurrentMoney(currentMoney + previousBill - newBill);
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 db.collection(UserApi.COLLECTIONS_NAME).document(UserApi.getInstance().getUserId())
