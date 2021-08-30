@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button electricityBtn;
     private Button setGoalBtn;
     private Button additionalInfoBtn;
+    private TextView percentCompleteText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,7 @@ public class HomeActivity extends AppCompatActivity {
         electricityBtn = findViewById(R.id.electricity_btn);
         setGoalBtn = findViewById(R.id.setgoal_btn);
         additionalInfoBtn = findViewById(R.id.additional_btn);
+        percentCompleteText = findViewById(R.id.percent_complete_text);
 
         // if no user is currently logged in
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
@@ -64,9 +67,17 @@ public class HomeActivity extends AppCompatActivity {
                         userApi.setFirstName(user.getFirstName());
                         userApi.setLastName(user.getLastName());
                         userApi.setPhoneNumber(user.getPhoneNumber());
+                        userApi.setCurrentMoney(user.getCurrentMoney());
+                        userApi.setTargetMoney(user.getTargetMoney());
                         double currentMoney = UserApi.getInstance().getCurrentMoney();
                         double targetMoney = UserApi.getInstance().getTargetMoney();
                         progressBar.setProgress((int)(currentMoney/targetMoney));
+                        if (targetMoney == 0) {
+                            percentCompleteText.setText("Set a goal!");
+                        } else {
+                            int percent = (int) (currentMoney/targetMoney) / 100;
+                            percentCompleteText.setText(String.format("%s %d%s", getString(R.string.you_have_completed_string), percent, getString(R.string.percent_goal_string)));
+                        }
                     }
                     else{
                         Log.d(LOG_TAG,"Failed to fetch data");
