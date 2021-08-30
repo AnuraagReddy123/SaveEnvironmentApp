@@ -52,7 +52,7 @@ public class ideaShareActivity extends AppCompatActivity {
         user = firebaseAuth.getCurrentUser();
 
         progressBar = findViewById(R.id.idea_share_progress);
-        scrollView = findViewById(R.id.scrollView);
+        scrollView = findViewById(R.id.mainView);
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
