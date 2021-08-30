@@ -16,10 +16,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.PhoneAuthProvider;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 public class SignInActivity extends AppCompatActivity {
@@ -30,8 +27,6 @@ public class SignInActivity extends AppCompatActivity {
     private Button signInButton;
     private FirebaseAuth mAuth;// firebase authentication object
     private FirebaseUser currentUser;
-    private String mVerificationId;
-    private PhoneAuthProvider.ForceResendingToken mResendToken;
     private FirebaseFirestore db;
 
     @Override

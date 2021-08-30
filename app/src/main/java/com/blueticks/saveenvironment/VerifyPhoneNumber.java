@@ -16,11 +16,13 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.concurrent.TimeUnit;
 
 import model.User;
+import util.UserApi;
 
 public class VerifyPhoneNumber extends AppCompatActivity {
     private static final String LOG_TAG = SignInActivity.class.getSimpleName();
@@ -117,6 +119,11 @@ public class VerifyPhoneNumber extends AppCompatActivity {
                 .addOnCompleteListener(VerifyPhoneNumber.this,
                         task -> {
                             if(task.isSuccessful()) {
+                                UserApi userApi = UserApi.getInstance();
+                                userApi.setPhoneNumber(phoneNumber);
+                                userApi.setFirstName(firstName);
+                                userApi.setLastName(lastName);
+                                UserApi.getInstance().setUid(FirebaseAuth.getInstance().getCurrentUser().getUid());
                                 if(!oldUser) {
                                     // add this new user to that database
                                     addDataToFireStore(firstName,lastName,phoneNumber);
@@ -135,6 +142,7 @@ public class VerifyPhoneNumber extends AppCompatActivity {
                         });
     }
 
+    // Add the new user to the database
     private void addDataToFireStore(String firstName,String lastName,String phoneNumber) {
         // creating a collection reference
         // for our Firebase Firestore database
@@ -142,9 +150,9 @@ public class VerifyPhoneNumber extends AppCompatActivity {
         // Create the user object with the user data
         User user = new User(firstName,lastName, phoneNumber);
         // add the data to the database
-        dbUsers.
-            add(user).
-            addOnSuccessListener(documentReference -> {
+        dbUsers.document(UserApi.getInstance().getUserId())
+            .set(user)
+            .addOnSuccessListener(documentReference -> {
                 // when the user has been added successfully, we display a message
                 Toast.makeText(VerifyPhoneNumber.this,"You have been registered successfully",Toast.LENGTH_SHORT).show();
                 // redirect the user to the home activity

@@ -64,16 +64,6 @@ public class ideaShareActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        Intent intent = getIntent();
-        String idea = intent.getStringExtra("addedIdea");
-        ideaArrayList.add(new Idea("Abcde", "Fghijk", idea));
-        recyclerViewAdapter = new RecyclerViewAdapter(ideaShareActivity.this, ideaArrayList);
-        recyclerView.setAdapter(recyclerViewAdapter);
-    }
-
-    @Override
     protected void onStart() {
         super.onStart();
         collectionReference
