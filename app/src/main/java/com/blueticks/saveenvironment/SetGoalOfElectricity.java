@@ -42,7 +42,6 @@ public class SetGoalOfElectricity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.v(LOG_TAG,"Fetched the user data");
-                String phoneNumber = UserApi.getInstance().getPhoneNumber();
                 double electricBill = Double.parseDouble(electricityBill.getText().toString());
                 double targetMoney = Double.parseDouble(goalAmount.getText().toString());
                 updateUser(electricBill,targetMoney);
@@ -52,6 +51,8 @@ public class SetGoalOfElectricity extends AppCompatActivity {
     }
 
     private void updateUser(double electricityBill,double targetMoney) {
+        UserApi.getInstance().getCurrentUser().setElectricityBill(electricityBill);
+        UserApi.getInstance().getCurrentUser().setTargetMoney(targetMoney);
         db.collection(UserApi.COLLECTIONS_NAME).document(UserApi.getInstance().getUserId())
                 .update(UserApi.TARGET_MONEY,targetMoney,UserApi.ELECTRICITY_BILL,electricityBill)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {

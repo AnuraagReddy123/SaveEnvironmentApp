@@ -85,9 +85,11 @@ public class SignInActivity extends AppCompatActivity {
                                             QuerySnapshot querySnapshot = task.getResult();
                                             User user = querySnapshot.getDocuments().get(0).toObject(User.class);
                                             UserApi userApi = UserApi.getInstance();
-                                            userApi.setFirstName(user.getFirstName());
-                                            userApi.setLastName(user.getLastName());
-                                            userApi.setPhoneNumber(user.getPhoneNumber());
+                                            userApi.setCurrentUser(user);
+//                                            userApi.setFirstName(user.getFirstName());
+//                                            userApi.setLastName(user.getLastName());
+//                                            userApi.setPhoneNumber(user.getPhoneNumber());
+//                                            userApi.setCurrentMoney(user);
                                             Intent intent = new Intent(SignInActivity.this, VerifyPhoneNumber.class);
                                             intent.putExtra(UserApi.LOG_IN,true);// checks if the user being signed in ?
                                             startActivity(intent);
