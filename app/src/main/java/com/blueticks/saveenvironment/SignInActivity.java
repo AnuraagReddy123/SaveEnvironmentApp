@@ -90,6 +90,7 @@ public class SignInActivity extends AppCompatActivity {
                                             userApi.setPhoneNumber(user.getPhoneNumber());
                                             userApi.setCurrentMoney(user.getCurrentMoney());
                                             userApi.setTargetMoney(user.getTargetMoney());
+                                            userApi.setElectricityBill(user.getElectricityBill());
                                             Intent intent = new Intent(SignInActivity.this, VerifyPhoneNumber.class);
                                             intent.putExtra(UserApi.LOG_IN,true);// checks if the user being signed in ?
                                             startActivity(intent);
