@@ -13,8 +13,9 @@
     <string name="additional_values">Additional Ways</string>
     <string name="previous_bill_string">Previous Electricity Bill</string>
     <string name="placeholder_money">Rs 30000</string>
-    <string name="notification_string">We will help you with managing your current electricity bill. Turn on notifications from settings &lt;br /&gt;
-        &lt;br /&gt;The difference will be added to your savings!</string>
+    <string name="notification_string">We will help you with managing your current electricity bill.
+        <br>Turn on notifications from settings</br>
+        <br>The difference will be added to your savings!</br></string>
     <string name="new_bill_string">Enter new Electricity Bill</string>
     <string name="new_electricity_bill">New Electricity Bill</string>
     <string name="save_new_bill">Save New Bill</string>
@@ -34,4 +35,6 @@
     <string name="logout">Logout</string>
     <string name="saved">Saved</string>
     <string name="goal">Goal</string>
+    <string name="you_have_completed_string">You have completed </string>
+    <string name="percent_goal_string">% of your goal!</string>
 </resources>

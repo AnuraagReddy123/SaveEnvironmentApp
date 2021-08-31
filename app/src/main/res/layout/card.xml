@@ -38,7 +38,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clickable="true"
-            android:text="TextView" />
+            android:fontFamily="@font/cormorant_sc_medium"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:text="TextView"
+            android:textSize="18dp" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
