@@ -51,7 +51,6 @@ public class HomeActivity extends AppCompatActivity {
             finish();
         }
         else {
-            Toast.makeText(HomeActivity.this, "Welcome!!", Toast.LENGTH_SHORT).show();
             // when the user is logged in
             UserApi.getInstance().setUserid(FirebaseAuth.getInstance().getCurrentUser().getUid());
             FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -69,13 +68,18 @@ public class HomeActivity extends AppCompatActivity {
                         userApi.setPhoneNumber(user.getPhoneNumber());
                         userApi.setCurrentMoney(user.getCurrentMoney());
                         userApi.setTargetMoney(user.getTargetMoney());
+                        userApi.setElectricityBill(user.getElectricityBill());
                         double currentMoney = UserApi.getInstance().getCurrentMoney();
                         double targetMoney = UserApi.getInstance().getTargetMoney();
-                        progressBar.setProgress((int)(currentMoney/targetMoney));
                         if (targetMoney == 0) {
                             percentCompleteText.setText("Set a goal!");
                         } else {
-                            int percent = (int) (currentMoney/targetMoney) / 100;
+                            int percent = (int)((currentMoney * 100.0f)/targetMoney);
+                            Log.d(LOG_TAG,"CurrentMoney: " + currentMoney);
+                            Log.d(LOG_TAG,"TargetMoney: " + targetMoney);
+                            Log.d(LOG_TAG,"Percent: " + percent);
+                            percent = 45;
+                            progressBar.setProgress(45);
                             percentCompleteText.setText(String.format("%s %d%s", getString(R.string.you_have_completed_string), percent, getString(R.string.percent_goal_string)));
                         }
                     }
@@ -92,5 +96,54 @@ public class HomeActivity extends AppCompatActivity {
         setGoalBtn.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, SetGoalOfElectricity.class)));
 
         additionalInfoBtn.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, ideaShareActivity.class)));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // if no user is currently logged in
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            Intent intent = new Intent(HomeActivity.this, SignInActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        else {
+            // when the user is logged in
+            UserApi.getInstance().setUserid(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+            db.collection(UserApi.COLLECTIONS_NAME).document(UserApi.getInstance().getUserId())
+                    .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if(task.isSuccessful()) {
+                        Log.d(LOG_TAG,"Data fetched successfully");
+                        DocumentSnapshot documentSnapshot = task.getResult();
+                        User user = documentSnapshot.toObject(User.class);
+                        UserApi userApi = UserApi.getInstance();
+                        userApi.setFirstName(user.getFirstName());
+                        userApi.setLastName(user.getLastName());
+                        userApi.setPhoneNumber(user.getPhoneNumber());
+                        userApi.setCurrentMoney(user.getCurrentMoney());
+                        userApi.setTargetMoney(user.getTargetMoney());
+                        userApi.setElectricityBill(user.getElectricityBill());
+                        double currentMoney = UserApi.getInstance().getCurrentMoney();
+                        double targetMoney = UserApi.getInstance().getTargetMoney();
+                        if (targetMoney == 0) {
+                            percentCompleteText.setText("Set a goal!");
+                        } else {
+                            int percent = (int)((currentMoney * 100.0f)/targetMoney);
+                            Log.d(LOG_TAG,"CurrentMoney: " + currentMoney);
+                            Log.d(LOG_TAG,"TargetMoney: " + targetMoney);
+                            Log.d(LOG_TAG,"Percent: " + percent);
+                            progressBar.setProgress(percent);
+                            percentCompleteText.setText(String.format("%s %d%s", getString(R.string.you_have_completed_string), percent, getString(R.string.percent_goal_string)));
+                        }
+                    }
+                    else{
+                        Log.d(LOG_TAG,"Failed to fetch data");
+                    }
+                }
+            });
+        }
     }
 }
