@@ -12,9 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SaveEnvironment">
         <activity
+            android:name=".Profile"
+            android:exported="true" />
+        <activity
             android:name=".SecondHandSellling"
-            android:exported="true" >
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".sellingProductDetails"
             android:exported="true" />
