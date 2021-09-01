@@ -2,7 +2,6 @@ package com.blueticks.saveenvironment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -25,8 +24,8 @@ public class TransportActivity extends AppCompatActivity implements AdapterView.
     private TextView textview10;
 
 
-    private EditText edittext1;
-    private EditText edittext2;
+    private EditText sourceEt;
+    private EditText destEt;
 
     private Spinner spinner;
 
@@ -38,15 +37,13 @@ public class TransportActivity extends AppCompatActivity implements AdapterView.
         button=findViewById(R.id.button2);
         textview7=findViewById(R.id.textView7);
         textview9=findViewById(R.id.textView9);
-        textview11=findViewById(R.id.textView11);
 
-        textview5=findViewById(R.id.textView5);
-        textview8=findViewById(R.id.textView8);
-        textview10=findViewById(R.id.textView10);
+        textview8=findViewById(R.id.distance_text);
+        textview10=findViewById(R.id.amount_saved_text);
 
 
-        edittext1=findViewById(R.id.editText10);
-        edittext1=findViewById(R.id.editText11);
+        sourceEt=findViewById(R.id.source_et);
+        destEt=findViewById(R.id.dest_et);
 
 
         spinner = findViewById(R.id.spinner);

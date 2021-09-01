@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -32,6 +34,8 @@ public class SignInActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;// firebase authentication object
     private FirebaseUser currentUser;
     private FirebaseFirestore db;
+    private ConstraintLayout constraintLayout;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,8 @@ public class SignInActivity extends AppCompatActivity {
         signInButton = findViewById(R.id.signInButton);
         registerTxt = findViewById(R.id.registerTxt);
         currentUser = mAuth.getCurrentUser();
+        constraintLayout = findViewById(R.id.signLayout);
+        progressBar = findViewById(R.id.signin_bar);
         // check if the user is logged in
         if(currentUser != null) {
             Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
@@ -69,6 +75,9 @@ public class SignInActivity extends AppCompatActivity {
                         phnNumber.setError(null);
                         // method for sending verification code
                     }
+                    constraintLayout.setVisibility(View.GONE);
+                    progressBar.setVisibility(View.VISIBLE);
+
                     String phoneNumber = phnNumber.getText().toString();
                     db.collection(UserApi.COLLECTIONS_NAME)
                             .whereEqualTo(UserApi.PHONE_NUMBER,phoneNumber)
@@ -80,6 +89,8 @@ public class SignInActivity extends AppCompatActivity {
                                     if(task.isSuccessful()) {
                                         if(task.getResult().size() == 0) {
                                             Toast.makeText(SignInActivity.this, "Phone Number doesn't exist", Toast.LENGTH_SHORT).show();
+                                            constraintLayout.setVisibility(View.VISIBLE);
+                                            progressBar.setVisibility(View.GONE);
                                         }
                                         else {
                                             QuerySnapshot querySnapshot = task.getResult();
@@ -94,6 +105,7 @@ public class SignInActivity extends AppCompatActivity {
                                             Intent intent = new Intent(SignInActivity.this, VerifyPhoneNumber.class);
                                             intent.putExtra(UserApi.LOG_IN,true);// checks if the user being signed in ?
                                             startActivity(intent);
+                                            finish();
                                         }
                                     }
                                     else{
