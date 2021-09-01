@@ -31,4 +31,5 @@
     <string name="set_goal_string">Set Goal</string>
     <string name="you_have_completed_string">You have completed </string>
     <string name="percent_goal_string">% of your goal!</string>
+    <string name="notification_turn_string">Turn on Notifications</string>
 </resources>

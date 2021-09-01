@@ -3,24 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/SaveEnvironmentApp/app/src/main/res/layout/activity_electricity.xml" value="0.25416666666666665" />
+        <entry key="../../Android/Sdk/platforms/android-30/data/res/layout/simple_spinner_item.xml" value="0.27898550724637683" />
         <entry key="..\:/SaveEnvironmentApp/app/src/main/res/layout/activity_set_goal_of_electricity.xml" value="0.25416666666666665" />
         <entry key="..\:/SaveEnvironmentApp/app/src/main/res/layout/activity_transport.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_buy_and_sell.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_electricity.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_idea_share.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_second_hand_sellling.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_selling_product_details.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_set_goal_of_electricity.xml" value="0.24010416666666667" />
-        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/activity_text_of_idea.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/buy_and_sell_card.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Kishor/AndroidStudioProjects/SaveEnvironmentApp/app/src/main/res/layout/card.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable/custom_progress_bg.xml" value="0.32083333333333336" />
         <entry key="app/src/main/res/layout/activity_electricity.xml" value="0.27943840579710144" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="app/src/main/res/layout/activity_idea_share.xml" value="0.296195652173913" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_saving_methods.xml" value="0.27898550724637683" />
+        <entry key="app/src/main/res/layout/activity_second_hand_sellling.xml" value="0.4" />
+        <entry key="app/src/main/res/layout/activity_selling_product_details.xml" value="0.2653985507246377" />
+        <entry key="app/src/main/res/layout/activity_set_goal_of_electricity.xml" value="0.27898550724637683" />
+        <entry key="app/src/main/res/layout/activity_settings.xml" value="0.2586050724637681" />
+        <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.2653985507246377" />
         <entry key="app/src/main/res/layout/activity_text_of_idea.xml" value="0.296195652173913" />
         <entry key="app/src/main/res/layout/activity_transport.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_verify_phone_number.xml" value="0.25" />
@@ -36,7 +33,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.27943840579710144" />
+        <option name="scale" value="0.2" />
       </ProjectState>
     </option>
   </component>
