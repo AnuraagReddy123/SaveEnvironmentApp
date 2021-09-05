@@ -10,7 +10,7 @@ saving the environment.
 
 The user needs to create an account so that his/her progress can be tracked. We have used firebase
 authentication for registration and sign in purposes. The user needs to enter his phone number and
-he/she will receive and OTP which can be used for authentication and logging the user in. The app
+he/she will receive an OTP which can be used for authentication and logging the user in. The app
 presents different ways to save money such as by:
 - Saving Electricity
 - Saving Transportation costs
