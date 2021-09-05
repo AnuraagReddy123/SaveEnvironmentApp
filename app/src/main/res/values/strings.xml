@@ -41,5 +41,6 @@
     <string-array name="vehicles">
         <item>Bike</item>
         <item>Car</item>
+        <item>Walk</item>
     </string-array>
 </resources>

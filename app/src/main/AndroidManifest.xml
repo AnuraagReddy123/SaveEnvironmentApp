@@ -22,7 +22,7 @@
             android:exported="true" />
         <activity
             android:name=".BuyAndSellActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".SettingsActivity"
             android:exported="true" />
@@ -53,11 +53,7 @@
         <activity
             android:name=".SignInActivity"
             android:exported="true">
-            \<intent-filter>
-            <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
 
         <meta-data
@@ -69,7 +65,13 @@
             android:exported="true" />
         <activity
             android:name=".TransportActivity"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
