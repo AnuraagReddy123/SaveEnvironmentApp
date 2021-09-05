@@ -38,4 +38,9 @@
     <string name="you_have_completed_string">You have completed </string>
     <string name="percent_goal_string">% of your goal!</string>
     <string name="notification_turn_string">Turn on Notifications</string>
+    <string-array name="vehicles">
+        <item>Bike</item>
+        <item>Car</item>
+        <item>Walk</item>
+    </string-array>
 </resources>
