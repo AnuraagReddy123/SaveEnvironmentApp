@@ -100,7 +100,8 @@ public class TransportActivity extends AppCompatActivity implements AdapterView.
                     updateSavedAmount(saved_bike);
                 }
                 else{
-                    updateSavedAmount(cost_walking);
+                    amount_saved_text.setText(Double.toString(saved_walking));
+                    updateSavedAmount(saved_walking);
                 }
 
             }
@@ -111,7 +112,6 @@ public class TransportActivity extends AppCompatActivity implements AdapterView.
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
         SpinnerItem = text;
     }
 
