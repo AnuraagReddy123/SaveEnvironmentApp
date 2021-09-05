@@ -30,3 +30,5 @@ Project is created with
 * Java
 * XML
 * FireBase
+
+Video: https://drive.google.com/file/d/1vSLsJZPwNtgOBnw0bnQYdfVQCRG42Lod/view?usp=sharing
