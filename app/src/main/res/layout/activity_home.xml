@@ -61,14 +61,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="5dp"
         android:layout_marginEnd="32dp"
         android:text="@string/additional_values"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/electricity_btn"
+        app:layout_constraintTop_toBottomOf="@+id/buying_and_selling"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -120,7 +119,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/additional_btn"
+        app:layout_constraintTop_toBottomOf="@+id/electricity_btn"
         app:layout_constraintVertical_bias="0.01999998" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
