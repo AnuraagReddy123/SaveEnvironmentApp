@@ -3,7 +3,7 @@ Android App for saving environment by saving money
 
 
 ## General Info
-This Android App has been created as an attempt to tackle the problame of Climate Action which is 
+This Android App has been created as an attempt to tackle the problem of Climate Action which is 
 a part of United Nations Sustainable Development Goals. The App is intended to be used by general 
 people where they will be provided with ways in which they can save money while also indirectly 
 saving the environment.
