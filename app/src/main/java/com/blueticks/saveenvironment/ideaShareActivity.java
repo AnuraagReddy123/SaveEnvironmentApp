@@ -95,8 +95,10 @@ public class ideaShareActivity extends AppCompatActivity {
                             recyclerViewAdapter.notifyDataSetChanged();
                             progressBar.setVisibility(View.GONE);
                             scrollView.setVisibility(View.VISIBLE);
+                            finish();
                         } else {
-
+                            progressBar.setVisibility(View.GONE);
+                            scrollView.setVisibility(View.VISIBLE);
                         }
                     }
                 })
