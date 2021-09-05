@@ -35,6 +35,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button electricityBtn;
     private Button setGoalBtn;
     private Button additionalInfoBtn;
+    private Button buyingAndSelling;
     private TextView percentCompleteText;
     public static WorkManager mWorkManager;
 
@@ -48,6 +49,7 @@ public class HomeActivity extends AppCompatActivity {
         setGoalBtn = findViewById(R.id.setgoal_btn);
         additionalInfoBtn = findViewById(R.id.additional_btn);
         percentCompleteText = findViewById(R.id.percent_complete_text);
+        buyingAndSelling = findViewById(R.id.buying_and_selling);
         mWorkManager = WorkManager.getInstance(this);
 
         // if no user is currently logged in
@@ -99,6 +101,8 @@ public class HomeActivity extends AppCompatActivity {
                 }
             });
         }
+        buyingAndSelling.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this,SecondHandSellling.class)));
+
         transportationBtn.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, TransportActivity.class)));
 
         electricityBtn.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, ElectricityActivity.class)));
