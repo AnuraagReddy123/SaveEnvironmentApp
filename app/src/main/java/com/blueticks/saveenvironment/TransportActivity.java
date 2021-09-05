@@ -12,6 +12,9 @@ import android.widget.TextView;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TransportActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     private Button button;
@@ -20,14 +23,16 @@ public class TransportActivity extends AppCompatActivity implements AdapterView.
     private TextView textview11;
 
     private TextView textview5;
-    private TextView textview8;
-    private TextView textview10;
+    private TextView distance_text;
+    private TextView amount_saved_text;
 
 
     private EditText sourceEt;
     private EditText destEt;
 
     private Spinner spinner;
+
+    private String SpinnerItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +43,8 @@ public class TransportActivity extends AppCompatActivity implements AdapterView.
         textview7=findViewById(R.id.textView7);
         textview9=findViewById(R.id.textView9);
 
-        textview8=findViewById(R.id.distance_text);
-        textview10=findViewById(R.id.amount_saved_text);
+        distance_text = findViewById(R.id.distance_text);
+        amount_saved_text = findViewById(R.id.amount_saved_text);
 
 
         sourceEt=findViewById(R.id.source_et);
@@ -54,12 +59,46 @@ public class TransportActivity extends AppCompatActivity implements AdapterView.
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+
+        String src = sourceEt.getText().toString().trim();
+        String dest = destEt.getText().toString().trim();
+
+        double distance = 2.0;    // in km
+        float petrol_price = 100.0f;
+        float mileage_car = 20.0f;
+        float mileage_bike = 60.0f;
+
+        double cost_car = petrol_price * (distance/mileage_car);
+        double cost_bike = petrol_price * (distance/mileage_bike);
+        double cost_walking = 0;
+
+        double saved_walking = cost_car - cost_walking;
+        double saved_bike = cost_car - cost_bike;
+        double saved_car = 0;
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                distance_text.setText(Double.toString(distance));
+                if(SpinnerItem == "Car"){
+                    amount_saved_text.setText(Double.toString(saved_car));
+                }
+                else if(SpinnerItem == "Bike"){
+                    amount_saved_text.setText(Double.toString(saved_bike));
+                }
+                else if(SpinnerItem == "Walk"){
+                    amount_saved_text.setText(Double.toString(saved_walking));
+                }
+            }
+        });
+
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
         Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+        SpinnerItem = text;
     }
 
     @Override
