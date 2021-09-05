@@ -21,6 +21,10 @@ current amount of money they have saved so far. By engaging in different activit
 their saved amount and compare the results at the end of the month. We used Firestore database to store
 the user information so that it can be retrieved from any device. 
 
+Along with this, we have also allowed users to enter their ideas and post them in the forums so that
+they can share it with the world. They are also provided with the option to enable notifications where
+they can be notified at regular intervals about any unused running electrical appliances in their home.
+
 ## Technologies
 Project is created with
 * Java
