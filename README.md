@@ -1,2 +1,2 @@
 # SaveEnvironmentApp
-Android App for saving environement by saving money
+Android App for saving environment by saving money
