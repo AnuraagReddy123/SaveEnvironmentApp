@@ -124,8 +124,12 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-//            case R.id.logout:
-//                break;
+            case R.id.logout:
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(HomeActivity.this,SignInActivity.class);
+                startActivity(intent);
+                finish();
+                break;
             case R.id.settings:
                 startActivity(new Intent(HomeActivity.this, SettingsActivity.class));
                 break;
