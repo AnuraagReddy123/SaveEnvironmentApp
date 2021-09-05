@@ -80,13 +80,13 @@ public class TransportActivity extends AppCompatActivity implements AdapterView.
             @Override
             public void onClick(View view) {
                 distance_text.setText(Double.toString(distance));
-                if(SpinnerItem == "Car"){
-                    amount_saved_text.setText(Double.toString(saved_car));
+                if(SpinnerItem.equals("Car")){
+                    amount_saved_text.setText(Double.toString(saved_car));  
                 }
-                else if(SpinnerItem == "Bike"){
+                else if(SpinnerItem.equals("Bike")){
                     amount_saved_text.setText(Double.toString(saved_bike));
                 }
-                else if(SpinnerItem == "Walk"){
+                else if(SpinnerItem.equals("Walk")){
                     amount_saved_text.setText(Double.toString(saved_walking));
                 }
             }
