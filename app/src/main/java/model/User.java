@@ -6,6 +6,7 @@ public class User {
     private String phoneNumber;
     private double electricityBill;
     private double targetMoney,currentMoney;
+    private boolean subscribed;
 
     public User() {
 
@@ -15,6 +16,7 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
+        subscribed = true;
     }
 
     public String getFirstName(){
@@ -52,4 +54,13 @@ public class User {
     public void setCurrentMoney(double currentMoney) {
         this.currentMoney = currentMoney;
     }
+
+    public void setSubscribed(boolean subscribed) {
+        this.subscribed = subscribed;
+    }
+
+    public boolean getSubscribed() {
+        return subscribed;
+    }
+
 }

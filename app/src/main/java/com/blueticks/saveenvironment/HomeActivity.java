@@ -2,23 +2,27 @@ package com.blueticks.saveenvironment;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
 
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.concurrent.TimeUnit;
 
 import model.User;
 import util.UserApi;
@@ -31,7 +35,9 @@ public class HomeActivity extends AppCompatActivity {
     private Button electricityBtn;
     private Button setGoalBtn;
     private Button additionalInfoBtn;
+    private Button buyingAndSelling;
     private TextView percentCompleteText;
+    public static WorkManager mWorkManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +49,8 @@ public class HomeActivity extends AppCompatActivity {
         setGoalBtn = findViewById(R.id.setgoal_btn);
         additionalInfoBtn = findViewById(R.id.additional_btn);
         percentCompleteText = findViewById(R.id.percent_complete_text);
+        buyingAndSelling = findViewById(R.id.buying_and_selling);
+        mWorkManager = WorkManager.getInstance(this);
 
         // if no user is currently logged in
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
@@ -69,6 +77,10 @@ public class HomeActivity extends AppCompatActivity {
                         userApi.setCurrentMoney(user.getCurrentMoney());
                         userApi.setTargetMoney(user.getTargetMoney());
                         userApi.setElectricityBill(user.getElectricityBill());
+                        userApi.setSubscribed(user.getSubscribed());
+                        if(userApi.getSubscribed()) {
+                            setUpNotifications();
+                        }
                         double currentMoney = UserApi.getInstance().getCurrentMoney();
                         double targetMoney = UserApi.getInstance().getTargetMoney();
                         if (targetMoney == 0) {
@@ -89,6 +101,8 @@ public class HomeActivity extends AppCompatActivity {
                 }
             });
         }
+        buyingAndSelling.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this,SecondHandSellling.class)));
+
         transportationBtn.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, TransportActivity.class)));
 
         electricityBtn.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, ElectricityActivity.class)));
@@ -126,6 +140,7 @@ public class HomeActivity extends AppCompatActivity {
                         userApi.setCurrentMoney(user.getCurrentMoney());
                         userApi.setTargetMoney(user.getTargetMoney());
                         userApi.setElectricityBill(user.getElectricityBill());
+                        userApi.setSubscribed(user.getSubscribed());
                         double currentMoney = UserApi.getInstance().getCurrentMoney();
                         double targetMoney = UserApi.getInstance().getTargetMoney();
                         if (targetMoney == 0) {
@@ -145,5 +160,10 @@ public class HomeActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    public static void setUpNotifications() {
+        PeriodicWorkRequest workRequest = new PeriodicWorkRequest.Builder(NotifyWorker.class,8, TimeUnit.HOURS).build();
+        mWorkManager.enqueue(workRequest);
     }
 }

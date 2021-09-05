@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="../../Android/Sdk/platforms/android-30/data/res/layout/simple_spinner_dropdown_item.xml" value="0.2671296296296296" />
         <entry key="../../Android/Sdk/platforms/android-30/data/res/layout/simple_spinner_item.xml" value="0.27898550724637683" />
+        <entry key="..\:/SaveEnvironmentApp/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/SaveEnvironmentApp/app/src/main/res/layout/activity_second_hand_sellling.xml" value="0.4" />
         <entry key="..\:/SaveEnvironmentApp/app/src/main/res/layout/activity_set_goal_of_electricity.xml" value="0.25416666666666665" />
+        <entry key="..\:/SaveEnvironmentApp/app/src/main/res/layout/activity_settings.xml" value="0.264" />
+        <entry key="..\:/SaveEnvironmentApp/app/src/main/res/layout/activity_sign_in.xml" value="0.1796875" />
         <entry key="..\:/SaveEnvironmentApp/app/src/main/res/layout/activity_transport.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable/custom_progress_bg.xml" value="0.32083333333333336" />
         <entry key="app/src/main/res/layout/activity_electricity.xml" value="0.27943840579710144" />

@@ -11,9 +11,10 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="356dp"
         android:layout_height="29dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:progressDrawable="@drawable/custom_progress_bg"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -21,10 +22,11 @@
         android:id="@+id/percent_complete_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="5dp"
         android:text="@string/placeholder_percentage"
         android:textSize="21sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
@@ -33,7 +35,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="32dp"
         android:text="@string/transportation_string"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +48,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="32dp"
         android:text="@string/electricity_string"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +61,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="32dp"
         android:text="@string/additional_values"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -73,7 +75,7 @@
         android:id="@+id/textView2"
         android:layout_width="362dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="5dp"
         android:gravity="center"
         android:text="@string/introduction_text"
         android:textSize="20sp"
@@ -82,7 +84,7 @@
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/percent_complete_text"
-        app:layout_constraintVertical_bias="0.035" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/setgoal_btn"
@@ -104,6 +106,7 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menu" />
@@ -118,5 +121,18 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar2"
         app:srcCompat="@drawable/jar_plant_and_coin_croped"
         tools:ignore="ImageContrastCheck" />
+
+    <Button
+        android:id="@+id/buying_and_selling"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="Selling and Buying"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/additional_btn"
+        app:layout_constraintVertical_bias="0.01999998" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
