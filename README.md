@@ -16,6 +16,11 @@ presents different ways to save money such as by:
 - Saving Transportation costs
 - Buying and Selling of used goods and much more
 
+Users have an option to set a goal of amount of money they want to save in a month along with the
+current amount of money they have saved so far. By engaging in different activities, they can increase
+their saved amount and compare the results at the end of the month. We used Firestore database to store
+the user information so that it can be retrieved from any device. 
+
 ## Technologies
 Project is created with
 * Java
