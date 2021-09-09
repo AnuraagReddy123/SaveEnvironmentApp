@@ -13,9 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SaveEnvironment">
 
-        <service android:name=".NotifyWorker"
-            android:permission="android.permission.BIND_JOB_SERVICE"
-            android:exported="true"/>
+        
         <activity
             android:name=".Profile"
             android:exported="true" />
@@ -45,6 +43,7 @@
             android:exported="true" />
         <activity
             android:name=".HomeActivity"
+            android:permission="android.permission.BIND_JOB_SERVICE"
             android:exported="true" >
         </activity>
         <activity
